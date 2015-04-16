@@ -2,10 +2,6 @@
 
 use strict;
 use Data::Dumper;
-use JSON;
-use List::Util qw(sum);
-use Getopt::Long;
-use Switch;
 
 my $file = @ARGV[0];
 open (FILE , "<$file");
@@ -19,7 +15,7 @@ close(FILE);
 
 my $catSites = {};
 for my $site (@sites) {
-  my $out = `grep -l $site data/*st | tr "\012" ","`;
+  my $out = `grep -l $site data_*/*st | tr "\012" ","`;
   $out =~ s/,$//;
   my @cats = split(/,/, $out);
   for my $cat (@cats) {

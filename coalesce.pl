@@ -2,10 +2,6 @@
 
 use strict;
 use Data::Dumper;
-use JSON;
-use List::Util qw(sum);
-use Getopt::Long;
-use Switch;
 
 my $site = {};
 while (my $file = shift @ARGV) {
